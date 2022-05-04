@@ -27,6 +27,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Dependencies
-        run: npm install .\dotnetthoughts\
+        run: npm install
       - name: Build the Angular app
-        run: npm run build-compression --prefix .\dotnetthoughts\
+        run: npm run build-compression
