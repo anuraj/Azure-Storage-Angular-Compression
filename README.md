@@ -1,1 +1,1 @@
-# Azure-Storage-Angular-Compression
+# Dotnetthoughts
