@@ -6,16 +6,16 @@ on:
     branches: [ main ]
   workflow_dispatch:
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - run: |
+          az webapp list --query "[?state=='Running']"
       #- name: Install Packages
       #  run: npm install
       #- name: Run a multi-line script
       #  run: npm run build-compress
-      - name: Install azcopy
-        uses: kheiakiyama/install-azcopy-action@v1.0.3
-        with:
-          version: v10
-      
