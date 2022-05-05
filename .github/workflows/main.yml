@@ -17,5 +17,5 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - run: |
-          az storage blob directory upload --connection-string ${{ secrets.STORAGE_CONNECTION_STRING }} -c $web -account-name dotnetthoughts --source ./dist-compressed/dotnetthoughts -d directory --recursive
+      - run: azcopy --version
+          
