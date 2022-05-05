@@ -24,3 +24,4 @@ jobs:
               az storage blob upload-batch --account-name dotnetthoughts --auth-mode key -d '$web' -s ./dist-compressed/dotnetthoughts/ --overwrite=true --content-encoding="GZip" --pattern="*.js" --content-type="application/javascript"
               az storage blob upload-batch --account-name dotnetthoughts --auth-mode key -d '$web' -s ./dist-compressed/dotnetthoughts/ --overwrite=true --content-encoding="GZip" --pattern="*.css" --content-type="text/css"
               az storage blob upload-batch --account-name dotnetthoughts --auth-mode key -d '$web' -s ./dist-compressed/dotnetthoughts/ --overwrite=true --content-encoding="GZip" --pattern="*.html" --content-type="text/html"
+              az storage blob upload-batch --account-name dotnetthoughts --auth-mode key -d '$web' -s ./dist/dotnetthoughts/ --overwrite=true --exclude-pattern="*.js,*.css,*.html"
