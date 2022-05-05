@@ -21,4 +21,4 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-              az storage blob upload-batch --account-name dotnetthoughts --auth-mode key -d '$web' -s ./dist-compressed/dotnetthoughts/
+              az storage blob upload-batch --account-name dotnetthoughts --auth-mode key -d '$web' -s ./dist-compressed/dotnetthoughts/ --overwrite=true --content-encoding="GZip"
