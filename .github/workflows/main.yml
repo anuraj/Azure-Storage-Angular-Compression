@@ -14,10 +14,8 @@ jobs:
       #  run: npm install
       #- name: Run a multi-line script
       #  run: npm run build-compress
-      - name: Azure Login
-        uses: Azure/login@v1.4.4
+      - name: Install azcopy
+        uses: kheiakiyama/install-azcopy-action@v1.0.3
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - run: |
-          az webapp list --query "[?state=='Running']"
+          version: v10
       
