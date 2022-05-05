@@ -17,5 +17,6 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - run: azcopy copy ./dist-compressed/dotnetthoughts/ https://dotnetthoughts.blob.core.windows.net/$web/ --recursive=true --content-encoding="GZip"
-          
+      - name: Deploying the files to storage account
+        run: azcopy list https://dotnetthoughts.blob.core.windows.net/$web/
+        #run: azcopy copy ./dist-compressed/dotnetthoughts/ https://dotnetthoughts.blob.core.windows.net/$web/ --recursive=true --content-encoding="GZip"
